@@ -7,7 +7,7 @@ CONTEXT="$1"
 KUBECONFIG_FILE="$2"
 
 # Create tmp file
-tmpfile=$(mktemp /tmp/k9s-apply-XXXXXX).yaml
+tmpfile=$(mktemp /tmp/k9s-apply-XXXXXX.yaml)
 # Cleanup tmp file at the end
 trap "rm -f '$tmpfile'" EXIT
 
