@@ -19,7 +19,7 @@ ${EDITOR:-vim} "$tmpfile"
 
 # Check if user wrote anything (file not empty)
 if [ ! -s "$tmpfile" ]; then
-  echo "Empty yaml"
+	echo "Empty yaml"
 	exit 0
 fi
 
@@ -27,7 +27,7 @@ fi
 new_sum=$(sha256sum "$tmpfile" | awk '{print $1}')
 
 if [ "$orig_sum" = "$new_sum" ]; then
-  "Yaml not changed"
+	echo "Yaml not changed"
 	exit 0
 fi
 
